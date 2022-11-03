@@ -1,23 +1,85 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from '@mui/material/Button';
+import ButtonBar from './components/ButtonBar';
+import PermanentDrawerLeft from './components/PermanentDrawerLeft';
+import CssBaseline from '@mui/material/CssBaseline';
+import Dashboard from './components/Dashboard';
+import Sales from './components/Sales';
+import Shipping from './components/Shipping';
+import Inventory from './components/Inventory';
+import Customers from './components/Customers';
+import PriceChanges from './components/PriceChanges';
+import StashedSales from './components/StashedSales';
+import CompletedSales from './components/CompletedSales';
+import ItemsSold from './components/ItemsSold';
+import ItemsTraded from './components/ItemsTraded';
+
+
+import Admin from './components/Admin';
+import {createBrowserRouter, RouterProvider, Route, Link} from "react-router-dom";
+
+  
+const router = createBrowserRouter([
+  {
+    element: <PermanentDrawerLeft /> ,
+    children: [
+      {
+        path: "/",
+        element: <Dashboard />,
+      },
+      {
+        path: "/Sales",
+        element: <Sales />,
+      },
+      {
+        path: "/Sales/StashedSales",
+        element: <StashedSales />,
+      },
+      {
+        path: "/Sales/CompletedSales",
+        element: <CompletedSales />,
+      },
+      {
+        path: "/Sales/ItemsSold",
+        element: <ItemsSold />,
+      },
+      {
+        path: "/Sales/ItemsTraded",
+        element: <ItemsTraded />,
+      },
+      {
+        path: "/Shipping",
+        element: <Shipping />,
+      },
+      {
+        path: "/Inventory/Summary",
+        element: <Inventory />,
+      },
+      {
+        path: "/Customers",
+        element: <Customers />,
+      },
+      {
+        path: "/PriceChanges",
+        element: <PriceChanges />,
+      },
+      {
+        path: "/Admin",
+        element: <Admin />,
+      },
+    ]
+  }
+]);
 
 function App() {
-  return (
+
+
+
+  return ( //returns html 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CssBaseline />
+      <RouterProvider router={router} />
+
     </div>
   );
 }
