@@ -7,6 +7,9 @@ import Dashboard from './components/Dashboard';
 import Sales from './components/Sales';
 import Shipping from './components/Shipping';
 import Inventory from './components/Inventory';
+import InventoryItems from './components/InventoryItems';
+import InventoryHistory from './components/InventoryHistory';
+import InventoryTransfer from './components/InventoryTransfer';
 import Customers from './components/Customers';
 import PriceChanges from './components/PriceChanges';
 import StashedSales from './components/StashedSales';
@@ -54,6 +57,18 @@ const router = createBrowserRouter([
       {
         path: "/Inventory/Summary",
         element: <Inventory />,
+      },
+      {
+        path: "/Inventory/Items",
+        element: <InventoryItems />,
+      },
+      {
+        path: "/Inventory/History",
+        element: <InventoryHistory />,
+      },
+      {
+        path: "/Inventory/Transfer",
+        element: <InventoryTransfer />,
       },
       {
         path: "/Customers",

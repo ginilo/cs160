@@ -1,10 +1,10 @@
-export default function InventoryItems(){
+export default function InventoryHistory(){
     //drop down menu of Summary, Items, History, Transfer
 
     return (
     <div> 
         {/* <Link to={`contacts/1`}>Your Name</Link>  */}
-        inventory items page 
+        inventory history page 
         {/* <Outlet />  */}
         </div>
     )
