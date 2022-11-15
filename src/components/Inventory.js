@@ -18,6 +18,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { DataGrid } from '@mui/x-data-grid';
+import { Link } from 'react-router-dom';
 
 export default function Inventory(){
     //drop down menu of Summary, Items, History, Transfer
@@ -80,7 +81,7 @@ export default function Inventory(){
             >
                 <Typography style={{display: 'inline-block'}} variant="h4" color="gray" paddingLeft="45px" paddingBottom="40px">Inventory</Typography>
             </Box>
-            <Button variant="contained" size="large" startIcon={<AddIcon />} style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', paddingRight: '10px'}} sx={{marginRight: '40px'}}/>
+            <Button variant="contained" size="large" component = {Link} to ="/Inventory/Items" startIcon={<AddIcon />} style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', paddingRight: '10px'}} sx={{marginRight: '40px'}}/>
         </Box>
         <Box
             component="div"
