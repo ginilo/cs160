@@ -21,9 +21,23 @@ import './components.style.css';
 
 function Dashboard () {
     const [freq, setFreq, day] = React.useState('');
+    const [category, setCategory, ] = React.useState('');
+    const [stores, setStores] = React.useState('');
     const [value, setValue] = React.useState(null);
 
-    const handleChange = (event) => {
+    const handleFreqChange = (event) => {
+        setFreq(event.target.value);
+    };
+
+    const handleCategoryChange = (event) => {
+        setCategory(event.target.value);
+    };
+
+    const handleStoreChange = (event) => {
+        setStores(event.target.value);
+    };
+
+    const handleChange =(event) => {
         setFreq(event.target.value);
     };
 
@@ -40,14 +54,22 @@ function Dashboard () {
     const rows = [
         {id: 1, store: 'Retro Rewind', sales: '$0.00', cogs: '$0.00', returns: '$0.00', grossProfit: '$0.00', salesHistory: 'Sales'},
     ];
+
+    const [tableData, setTableData] = React.useState([])
+
+    React.useEffect(() => {
+        fetch("api")
+            .then((data) => data.json())
+            .then((data) => setTableData(data))
+    })
       
     return (
         <Box
             component="main"
-            sx={{ flexGrow: 1, bgcolor: 'background.default', paddingTop: 6, display: 'flex', flexDirection: 'column'}}
+            sx={{ flexGrow: 1, bgcolor: 'background.default', display: 'flex', flexDirection: 'column'}}
         >
         <Toolbar />
-        <Typography variant="h4" color="rgb(90, 90, 90)" paddingLeft="45px" paddingBottom="40px">Dashboard</Typography>
+        <Typography variant="h4" color="rgb(90, 90, 90)" paddingBottom="40px">Dashboard</Typography>
         <Box
             component="tools"
             sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4 }}
@@ -61,7 +83,7 @@ function Dashboard () {
                             <Select
                             id="demo-simple-select"
                             value={freq}
-                            onChange={handleChange}
+                            onChange={handleFreqChange}
                             >
                             <MenuItem value={1}>Daily</MenuItem>
                             <MenuItem value={2}>Monthly</MenuItem>
@@ -84,19 +106,19 @@ function Dashboard () {
                         </FormControl>
                     </Box>
                     <Divider orientation="vertical" sx={{bgcolor: 'black'}}/>
-                    <Box sx={{ minWidth: 120 }}>
+                    <Box sx={{ minWidth: 50, maxWidth: 50 }}>
                         <FormControl sx={{minWidth: 180 }} size="small">
                             <InputLabel htmlFor='category-select'>Select Categories</InputLabel>
                             <Select
                                 labelId="demo-simple-select-helper-label"
                                 label="Select category"
                                 id="demo-simple-select"
-                                value={"Select category"}
-                                onChange={handleChange}
+                                value={category}
+                                onChange={handleCategoryChange}
                             >
-                            <MenuItem value={1}>Category1</MenuItem>
-                            <MenuItem value={2}>Category2</MenuItem>
-                            <MenuItem value={3}>Category3</MenuItem>
+                            <MenuItem value={'Category1'}>Category1</MenuItem>
+                            <MenuItem value={'Category2'}>Category2</MenuItem>
+                            <MenuItem value={'Category3'}>Category3</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
@@ -107,12 +129,12 @@ function Dashboard () {
                                 labelId="demo-simple-select-helper-label"
                                 label="Select Stores"
                                 id="demo-simple-select"
-                                value={"Select Stores"}
-                                onChange={handleChange}
+                                value={stores}
+                                onChange={handleStoreChange}
                             >
-                            <MenuItem value={1}>All Stores</MenuItem>
-                            <MenuItem value={2}>Store 2</MenuItem>
-                            <MenuItem value={3}>Store 3</MenuItem>
+                            <MenuItem value={'All Stores'}>All Stores</MenuItem>
+                            <MenuItem value={'Store 2'}>Store 2</MenuItem>
+                            <MenuItem value={'Store 3'}>Store 3</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>

@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -30,7 +31,7 @@ function Header() {
         sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`, backgroundColor: 'rgb(243, 243, 243)', paddingBottom: 1}}
       >
         <Toolbar>
-          <Button variant="contained" size="large" className="NewSaleBtn" sx={{textTransform: "none"}}>+ New Sale</Button>
+          <Button variant="contained" size="large" className="NewSaleBtn" component = {Link} to ="/Sales" sx={{textTransform: "none"}}>+ New Sale</Button>
           <div className="printer">
                 <CircleIcon 
                     sx={{color: 'orange', ml: '35px', mt: '10px'}}
