@@ -15,12 +15,16 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import { DataGrid } from '@mui/x-data-grid';
 
 export default function Inventory(){
     //drop down menu of Summary, Items, History, Transfer
     const [stores, setStores] = React.useState('');
     const [customers, setCustomers] = React.useState('');
+    const [sort, setSort] = React.useState('');
+    const [aging, setAging] = React.useState('');
 
     const handleStoreChange = (event) => {
         setStores(event.target.value);
@@ -30,18 +34,24 @@ export default function Inventory(){
         setCustomers(event.target.value);
     };
 
-    const salesColumns = [
+    const handleSortChange = (event) => {
+        setSort(event.target.value);
+    };
+
+    const handleAgingChange = (event) => {
+        setAging(event.target.value);
+    };
+
+    const inventoryColumns = [
         { field: 'id', headerName: 'ID', width: 50 },
-        { field: 'title', headerName: 'Title', width: 130},
-        { field: 'location', headerName: 'Location', width: 90 },
+        { field: 'name', headerName: 'Name', width: 130},
+        { field: 'count', headerName: 'Count', width: 90 },
         { field: 'cost', headerName: 'Cost', width: 70 },
-        { field: 'sellPrice', headerName: 'Sell Price', width: 80 },
-        { field: 'discount', headerName: 'Discount', width: 80 },
-        { field: 'net', headerName: 'Net', width: 80}
+        { field: 'price', headerName: 'Price', width: 80 },
     ];
     
-    const salesRows = [
-        {id: 1, location: 'Retro Rewind', createdOn: '9/30/2022', createdBy: '-', status: 'Open'},
+    const inventoryRows = [
+        {id: 1, name: 'Retro Rewind', count: '0', cost: '$0.00', price: '$0.00'},
     ];
 
     const totalColumns = [
@@ -128,54 +138,72 @@ export default function Inventory(){
         </Box>
         <Box
             component="div"
-            sx={{flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 1, paddingLeft: 4, paddingRight: 4}}
+            sx={{flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 1, paddingLeft: 4, paddingRight: 4, paddingBottom: 4}}
         >
             <Stack direction= "row" spacing={4}>
                 <Box
                     component="div"
                     sx={{flexGrow: 1, bgcolor: 'white', p: 2, minWidth:'650px', maxWidth: '650px'}}
                 >
-                    <Box
-                        component="div"
-                        sx={{flexGrow: 1, display: "flex"}}    
+                    <Stack direction= "row" spacing={2}>
+                    <Tabs
+                        orientation="vertical"
+                        textColor="secondary"
+                        indicatorColor="secondary"
+                        value={sort}
+                        onChange={handleSortChange}
+                        aria-label="Vertical tabs example"
+                        sx={{ borderRight: 1, borderColor: 'divider'}}
                     >
-                    <Box
-                        component="div"
-                        sx={{flexGrow: 1}}    
-                    >
-                        <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Sales</Typography>
-                    </Box>
-                    <Button variant="contained" size="large" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
-                        Export CSV
-                    </Button>
-                    </Box>
-                    <Box
-                        sx={{marginTop: '10px'}}
-                    >
-                        <DataGrid
-                            rows={salesRows}
-                            columns={salesColumns}
-                            pageSize={5}
-                            rowsPerPageOptions={[5]}
-                            checkboxSelection
-                            autoHeight
-                        />
-                    </Box>
-                </Box>
-                <Box
-                    component="div"
-                    sx={{flexGrow: 1, bgcolor: 'white', p: 2}}
-                >
-                    <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Inventory totals</Typography>
+                        <Tab label="By Store" />
+                        <Tab label="By Category" />
+                    </Tabs>
                     <DataGrid
-                            rows={totalRows}
-                            columns={totalColumns}
-                            pageSize={5}
-                            rowsPerPageOptions={[5]}
-                            checkboxSelection
-                            autoHeight
-                        />
+                        rows={inventoryRows}
+                        columns={inventoryColumns}
+                        pageSize={5}
+                        rowsPerPageOptions={[5]}
+                        checkboxSelection
+                        autoHeight
+                    />
+                    </Stack>
                 </Box>
+                <Stack direction= "column" spacing={3}>
+                    <Box
+                        component="div"
+                        sx={{flexGrow: 1, bgcolor: 'white', p: 2, minWidth: '370px', maxWidth: '370px'}}
+                    >
+                        <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Inventory totals</Typography>
+                        <DataGrid
+                                rows={totalRows}
+                                columns={totalColumns}
+                                pageSize={5}
+                                rowsPerPageOptions={[5]}
+                                checkboxSelection
+                                autoHeight
+                            />
+                    </Box>
+                    <Box
+                        component="div"
+                        sx={{flexGrow: 1, bgcolor: 'white', p: 2, paddingBottom: 30}}
+                    >
+                        <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Inventory aging by</Typography>
+                        <FormControl sx={{minWidth: 90, maxWidth: 90, marginLeft: '10px'}} size="small">
+                            <InputLabel htmlFor='store-select'>Aging</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-helper-label"
+                                label="Select Stores"
+                                id="demo-simple-select"
+                                value={aging}
+                                onChange={handleAgingChange}
+                            >
+                            <MenuItem value={'All Stores'}>count</MenuItem>
+                            <MenuItem value={'-'}>-</MenuItem>
+                            <MenuItem value={'-'}>-</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Box>
+                </Stack>
             </Stack>
         </Box>
         </Box>
