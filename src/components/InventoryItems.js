@@ -28,7 +28,7 @@ export default function InventoryItems(){
                 <Box
                     sx={{bgcolor: 'white', paddingTop: 1, marginRight: '10px'}}
                 >
-                    <Button variant="outlined" size="medium" component = {Link} to ="/Inventory/Summary" startIcon={<ArrowBackIcon />} className="backToListBtn" sx={{textTransform: "none", paddingLeft: "10px", paddingRight: "10px"}}>Back to List</Button>
+                    <Button variant="outlined" size="medium" component = {Link} to ="/Inventory" startIcon={<ArrowBackIcon />} className="backToListBtn" sx={{textTransform: "none", paddingLeft: "10px", paddingRight: "10px"}}>Back to List</Button>
                 </Box>
             </Box>
             <Box

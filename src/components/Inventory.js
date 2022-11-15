@@ -10,8 +10,8 @@ import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import TextField from '@mui/material/TextField';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom';
 
@@ -19,8 +19,6 @@ export default function Inventory(){
     //drop down menu of Summary, Items, History, Transfer
     const [stores, setStores] = React.useState('');
     const [customers, setCustomers] = React.useState('');
-    const [sort, setSort] = React.useState('');
-    const [aging, setAging] = React.useState('');
 
     const handleStoreChange = (event) => {
         setStores(event.target.value);
@@ -30,35 +28,17 @@ export default function Inventory(){
         setCustomers(event.target.value);
     };
 
-    const handleSortChange = (event) => {
-        setSort(event.target.value);
-    };
-
-    const handleAgingChange = (event) => {
-        setAging(event.target.value);
-    };
-
     const inventoryColumns = [
-        { field: 'id', headerName: 'ID', width: 50 },
-        { field: 'name', headerName: 'Name', width: 130},
-        { field: 'count', headerName: 'Count', width: 90 },
-        { field: 'cost', headerName: 'Cost', width: 70 },
+        { field: 'id', headerName: 'Stock #', width: 160 },
+        { field: 'condition', headerName: 'Condition', width: 180},
+        { field: 'item', headerName: 'Item', width: 200 },
+        { field: 'store', headerName: 'Store', width: 150 },
         { field: 'price', headerName: 'Price', width: 80 },
+        { field: 'quantity', headerName: 'Quantity', width: 80 },
     ];
     
     const inventoryRows = [
-        {id: 1, name: 'Retro Rewind', count: '0', cost: '$0.00', price: '$0.00'},
-    ];
-
-    const totalColumns = [
-        { field: 'id', headerName: 'ID', width: 50},
-        { field: 'count', headerName: 'Count', width: 80},
-        { field: 'cost', headerName: 'Cost', width: 80},
-        { field: 'price', headerName: 'Price', width: 80}
-    ];
-
-    const totalRows = [
-        { id: 1, count: 0, cost: '$0.00', price: '$0.00'},
+        {id: 0, condition: '-', item: '-', store: 'Retro Rewind', price: '$0.00', quantity: 1},
     ];
 
     return (
@@ -91,43 +71,46 @@ export default function Inventory(){
                         component="div"
                         sx={{flexGrow: 1}}
                 >
-                <Stack direction="row" spacing={2}>
-                    <Box sx={{ minWidth: 120 }}>
-                        <FormControl sx={{minWidth: 230 }} size="small">
-                            <InputLabel htmlFor='store-select'>All Stores</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                label="Select Stores"
-                                id="demo-simple-select"
-                                value={stores}
-                                onChange={handleStoreChange}
-                            >
-                            <MenuItem value={'All Stores'}>All Stores</MenuItem>
-                            <MenuItem value={'Store 2'}>Store 2</MenuItem>
-                            <MenuItem value={'Store 3'}>Store 3</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
-                    <Box sx={{ minWidth: 120 }}>
-                        <FormControl sx={{minWidth: 230 }} size="small">
-                            <InputLabel htmlFor='store-select'>Select categories</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                label="Customer"
-                                id="demo-simple-select"
-                                value={customers}
-                                onChange={handleCustomerChange}
-                            >
-                            <MenuItem value={'Customer'}>Customer</MenuItem>
-                            <MenuItem value={'Customer 2'}>Customer 2</MenuItem>
-                            <MenuItem value={'Customer 3'}>Customer 3</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
-                </Stack>
-                    
-                    </Box>
-                    <Button variant="contained" size="large" startIcon={<SearchIcon />} style={{maxWidth: '55px', maxHeight: '40px', minWidth: '55px', minHeight: '40px', paddingRight: '10px'}}></Button>
+                    <Stack direction="row" spacing={2}>
+                        <TextField id="outlined-basic" label="Search by keyword" variant="outlined" size="small"/>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{minWidth: 230 }} size="small">
+                                <InputLabel htmlFor='store-select'>Select categories</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    label="Customer"
+                                    id="demo-simple-select"
+                                    value={customers}
+                                    onChange={handleCustomerChange}
+                                >
+                                <MenuItem value={'Category'}>Category</MenuItem>
+                                <MenuItem value={'Category 2'}>Category 2</MenuItem>
+                                <MenuItem value={'Category 3'}>Category 3</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{minWidth: 230 }} size="small">
+                                <InputLabel htmlFor='store-select'>All Stores</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    label="Select Stores"
+                                    id="demo-simple-select"
+                                    value={stores}
+                                    onChange={handleStoreChange}
+                                >
+                                <MenuItem value={'All Stores'}>All Stores</MenuItem>
+                                <MenuItem value={'Store 2'}>Store 2</MenuItem>
+                                <MenuItem value={'Store 3'}>Store 3</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <Button variant="contained" size="large" startIcon={<SearchIcon />} style={{maxWidth: '55px', maxHeight: '40px', minWidth: '55px', minHeight: '40px', paddingRight: '10px'}}></Button>
+                    </Stack>
+                </Box>
+                    <Button variant="contained" size="medium" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
+                        Export CSV
+                    </Button>
                 </Stack>
             </Box>
 
@@ -136,24 +119,10 @@ export default function Inventory(){
             component="div"
             sx={{flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 1, paddingLeft: 4, paddingRight: 4, paddingBottom: 4}}
         >
-            <Stack direction= "row" spacing={4}>
                 <Box
                     component="div"
-                    sx={{flexGrow: 1, bgcolor: 'white', p: 2, minWidth:'650px', maxWidth: '650px'}}
+                    sx={{flexGrow: 1, bgcolor: 'white', p: 2}}
                 >
-                    <Stack direction= "row" spacing={2}>
-                    <Tabs
-                        orientation="vertical"
-                        textColor="secondary"
-                        indicatorColor="secondary"
-                        value={sort}
-                        onChange={handleSortChange}
-                        aria-label="Vertical tabs example"
-                        sx={{ borderRight: 1, borderColor: 'divider'}}
-                    >
-                        <Tab label="By Store" />
-                        <Tab label="By Category" />
-                    </Tabs>
                     <DataGrid
                         rows={inventoryRows}
                         columns={inventoryColumns}
@@ -162,45 +131,7 @@ export default function Inventory(){
                         checkboxSelection
                         autoHeight
                     />
-                    </Stack>
                 </Box>
-                <Stack direction= "column" spacing={3}>
-                    <Box
-                        component="div"
-                        sx={{flexGrow: 1, bgcolor: 'white', p: 2, minWidth: '370px', maxWidth: '370px'}}
-                    >
-                        <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Inventory totals</Typography>
-                        <DataGrid
-                                rows={totalRows}
-                                columns={totalColumns}
-                                pageSize={5}
-                                rowsPerPageOptions={[5]}
-                                checkboxSelection
-                                autoHeight
-                            />
-                    </Box>
-                    <Box
-                        component="div"
-                        sx={{flexGrow: 1, bgcolor: 'white', p: 2, paddingBottom: 30}}
-                    >
-                        <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Inventory aging by</Typography>
-                        <FormControl sx={{minWidth: 90, maxWidth: 90, marginLeft: '10px'}} size="small">
-                            <InputLabel htmlFor='store-select'>Aging</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                label="Select Stores"
-                                id="demo-simple-select"
-                                value={aging}
-                                onChange={handleAgingChange}
-                            >
-                            <MenuItem value={'All Stores'}>count</MenuItem>
-                            <MenuItem value={'-'}>-</MenuItem>
-                            <MenuItem value={'-'}>-</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
-                </Stack>
-            </Stack>
         </Box>
         </Box>
     )
