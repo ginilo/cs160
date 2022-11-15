@@ -107,7 +107,7 @@ export default function PermanentDrawerLeft() {
                 </ListItem>
 
             <ListItem key={"Inventory"} onClick={() => handleClickTwo()} disablePadding>
-                <ListItemButton component = {Link} to ="/Inventory">
+                <ListItemButton>
                 <ListItemIcon>
                     <InventoryIcon></InventoryIcon>
                 </ListItemIcon>
