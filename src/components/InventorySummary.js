@@ -15,7 +15,7 @@ import Tab from '@mui/material/Tab';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom';
 
-export default function Inventory(){
+export default function InventorySummary(){
     //drop down menu of Summary, Items, History, Transfer
     const [stores, setStores] = React.useState('');
     const [customers, setCustomers] = React.useState('');
