@@ -36,7 +36,7 @@ export default function Customers(){
         >
         <Box
             component="div"
-            sx={{flexGrow: 1, display: 'flex'}}
+            sx={{flexGrow: 1, display: 'flex', paddingTop: '30px'}}
         >
             <Box
             component="div"

@@ -32,11 +32,10 @@ function Sales () {
 
         <Box
             component="div"
-            sx={{flexGrow: 1, display: 'flex'}}
+            sx={{flexGrow: 1, display: 'flex', paddingTop: '30px'}}
         >
             <Typography variant="h4" color="rgb(90, 90, 90)" paddingLeft="45px" paddingBottom="10px">Sale</Typography>
         </Box>
-        <Typography variant="h4" color="rgb(90, 90, 90)" paddingLeft="45px" paddingBottom="10px">Sale</Typography>
 
         <Divider />
         <Box

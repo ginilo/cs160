@@ -33,7 +33,7 @@ function Shipping() {
         >
             <Box
             component="div"
-            sx={{flexGrow: 1, display: 'flex'}}
+            sx={{flexGrow: 1, display: 'flex', paddingTop: '30px'}}
             >
                 <Typography style={{display: 'inline-block'}} variant="h4" color="gray" paddingLeft="45px" paddingBottom="40px">Shipping</Typography>
             </Box>
