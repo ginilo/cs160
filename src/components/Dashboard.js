@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
@@ -48,7 +47,7 @@ function Dashboard () {
     };
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'id', headerName: 'ID', width: 90, hide: true},
         { field: 'store', headerName: 'Store', width: 150 },
         { field: 'sales', headerName: 'Sales', width: 100 },
         { field: 'cogs', headerName: 'COGS', width: 100 },
@@ -74,10 +73,9 @@ function Dashboard () {
             component="main"
             sx={{ flexGrow: 1, bgcolor: 'background.default', display: 'flex', flexDirection: 'column'}}
         >
-        <Toolbar />
         <Box
             component="div"
-            sx={{flexGrow: 1, display: 'flex'}}
+            sx={{flexGrow: 1, display: 'flex', paddingTop: '30px'}}
         >
             <Typography variant="h4" color="rgb(90, 90, 90)" paddingLeft="45px" paddingBottom="40px">Dashboard</Typography>
         </Box>
