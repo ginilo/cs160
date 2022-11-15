@@ -45,7 +45,7 @@ function ItemsSold() {
     return (
         <Box
             component="main"
-            sx={{ flexGrow: 1, bgcolor: 'background.default', paddingTop: 6, display: 'flex', flexDirection: 'column'}}
+            sx={{ flexGrow: 1, bgcolor: 'background.default', display: 'flex', flexDirection: 'column'}}
         >
         <Box
             component="div"

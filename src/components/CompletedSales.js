@@ -14,6 +14,17 @@ import SearchIcon from '@mui/icons-material/Search';
 import { DataGrid } from '@mui/x-data-grid';
 
 function CompletedSales() {
+    const [stores, setStores] = React.useState('');
+    const [customers, setCustomers] = React.useState('');
+
+    const handleStoreChange = (event) => {
+        setStores(event.target.value);
+    };
+
+    const handleCustomerChange = (event) => {
+        setCustomers(event.target.value);
+    };
+
     const columns = [
         { field: 'createdOn', headerName: 'Created On', width: 170 },
         { field: 'location', headerName: 'Location', width: 170 },
@@ -29,7 +40,7 @@ function CompletedSales() {
     return (
         <Box
             component="main"
-            sx={{ flexGrow: 1, bgcolor: 'background.default', paddingTop: 6, display: 'flex', flexDirection: 'column'}}
+            sx={{ flexGrow: 1, bgcolor: 'background.default', display: 'flex', flexDirection: 'column'}}
         >
         <Box
             component="div"
@@ -61,11 +72,12 @@ function CompletedSales() {
                                 labelId="demo-simple-select-helper-label"
                                 label="Select Stores"
                                 id="demo-simple-select"
-                                value={"Select Stores"}
+                                value={stores}
+                                onChange={handleStoreChange}
                             >
-                            <MenuItem value={1}>All Stores</MenuItem>
-                            <MenuItem value={2}>Store 2</MenuItem>
-                            <MenuItem value={3}>Store 3</MenuItem>
+                            <MenuItem value={'All Stores'}>All Stores</MenuItem>
+                            <MenuItem value={'Store 2'}>Store 2</MenuItem>
+                            <MenuItem value={'Store 3'}>Store 3</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
@@ -76,11 +88,12 @@ function CompletedSales() {
                                 labelId="demo-simple-select-helper-label"
                                 label="Customer"
                                 id="demo-simple-select"
-                                value={"Customer"}
+                                value={customers}
+                                onChange={handleCustomerChange}
                             >
-                            <MenuItem value={1}>Customer</MenuItem>
-                            <MenuItem value={2}>Customer 2</MenuItem>
-                            <MenuItem value={3}>Customer 3</MenuItem>
+                            <MenuItem value={'Customer'}>Customer</MenuItem>
+                            <MenuItem value={'Customer 2'}>Customer 2</MenuItem>
+                            <MenuItem value={'Customer 3'}>Customer 3</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
