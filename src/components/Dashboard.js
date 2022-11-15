@@ -20,10 +20,12 @@ import { DataGrid } from '@mui/x-data-grid';
 import './components.style.css';
 
 function Dashboard () {
-    const [freq, setFreq, day] = React.useState('');
+    const [freq, setFreq] = React.useState(1);
     const [category, setCategory, ] = React.useState('');
     const [stores, setStores] = React.useState('');
     const [value, setValue] = React.useState(null);
+    const [sort, setSort] = React.useState('');
+    const [overview, setOverview] = React.useState('');
 
     const handleFreqChange = (event) => {
         setFreq(event.target.value);
@@ -37,8 +39,12 @@ function Dashboard () {
         setStores(event.target.value);
     };
 
-    const handleChange =(event) => {
-        setFreq(event.target.value);
+    const handleOverviewChange = (event) => {
+        setOverview(event.target.value);
+    };
+
+    const handleSortChange = (event) => {
+        setSort(event.target.value);
     };
 
     const columns = [
@@ -69,7 +75,12 @@ function Dashboard () {
             sx={{ flexGrow: 1, bgcolor: 'background.default', display: 'flex', flexDirection: 'column'}}
         >
         <Toolbar />
-        <Typography variant="h4" color="rgb(90, 90, 90)" paddingBottom="40px">Dashboard</Typography>
+        <Box
+            component="div"
+            sx={{flexGrow: 1, display: 'flex'}}
+        >
+            <Typography variant="h4" color="rgb(90, 90, 90)" paddingLeft="45px" paddingBottom="40px">Dashboard</Typography>
+        </Box>
         <Box
             component="tools"
             sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4 }}
@@ -158,8 +169,8 @@ function Dashboard () {
                             orientation="vertical"
                             textColor="secondary"
                             indicatorColor="secondary"
-                            value={value}
-                            onChange={handleChange}
+                            value={sort}
+                            onChange={handleSortChange}
                             aria-label="Vertical tabs example"
                             sx={{ borderRight: 1, borderColor: 'divider' }}
                         >
@@ -181,8 +192,8 @@ function Dashboard () {
                                 labelId="demo-simple-select-helper-label"
                                 label="Overview"
                                 id="demo-simple-select"
-                                value={"Overview"}
-                                onChange={handleChange}
+                                value={overview}
+                                onChange={handleOverviewChange}
                             >
                             <MenuItem value={1}>Overview</MenuItem>
                             <MenuItem value={2}>Store 2</MenuItem>
