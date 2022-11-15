@@ -24,7 +24,6 @@ function StashedSales() {
             component="main"
             sx={{ flexGrow: 1, bgcolor: 'background.default', paddingTop: 6, display: 'flex', flexDirection: 'column'}}
         >
-        <Toolbar />
         <Box
             component="div"
             sx={{flexGrow: 1, display: 'flex'}}
