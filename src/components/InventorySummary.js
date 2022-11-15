@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 export default function InventorySummary(){
     //drop down menu of Summary, Items, History, Transfer
     const [stores, setStores] = React.useState('');
-    const [customers, setCustomers] = React.useState('');
+    const [categories, setCategory] = React.useState('');
     const [sort, setSort] = React.useState('');
     const [aging, setAging] = React.useState('');
 
@@ -26,8 +26,8 @@ export default function InventorySummary(){
         setStores(event.target.value);
     };
 
-    const handleCustomerChange = (event) => {
-        setCustomers(event.target.value);
+    const handleCategoriesChange = (event) => {
+        setCategory(event.target.value);
     };
 
     const handleSortChange = (event) => {
@@ -115,12 +115,12 @@ export default function InventorySummary(){
                                 labelId="demo-simple-select-helper-label"
                                 label="Customer"
                                 id="demo-simple-select"
-                                value={customers}
-                                onChange={handleCustomerChange}
+                                value={categories}
+                                onChange={handleCategoriesChange}
                             >
-                            <MenuItem value={'Customer'}>Customer</MenuItem>
-                            <MenuItem value={'Customer 2'}>Customer 2</MenuItem>
-                            <MenuItem value={'Customer 3'}>Customer 3</MenuItem>
+                            <MenuItem value={'Category'}>Category</MenuItem>
+                            <MenuItem value={'Category 2'}>Category 2</MenuItem>
+                            <MenuItem value={'Category 3'}>Category 3</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
