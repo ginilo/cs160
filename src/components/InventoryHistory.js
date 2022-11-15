@@ -20,7 +20,7 @@ export default function InventoryHistory(){
     };
 
     const inventoryColumns = [
-        { field: 'id', headerName: 'ID', width: 0 },
+        { field: 'id', headerName: 'ID', width: 0, hide:true },
         { field: 'date', headerName: 'Date', width: 150},
         { field: 'activity', headerName: 'Activity', width: 300 },
         { field: 'price', headerName: 'Sell Price', width: 150 },

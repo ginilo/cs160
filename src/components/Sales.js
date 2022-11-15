@@ -12,7 +12,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 function Sales () {
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'id', headerName: 'ID', width: 90, hide: true},
         { field: 'item', headerName: 'Item', width: 300 },
         { field: 'cogs', headerName: 'COGS', width: 100 },
         { field: 'price', headerName: 'Price', width: 100 },

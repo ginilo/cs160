@@ -25,7 +25,7 @@ export default function PriceChanges(){
   };
 
   const columns = [
-    { field: 'id', headerName: 'ID', width: 50 },
+    { field: 'id', headerName: 'ID', width: 50, hide: true },
     { field: 'item', headerName: 'Item', width: 200 },
     { field: 'condition', headerName: 'Condition', width: 200},
     { field: 'quantity', headerName: 'Quantity', width: 200 },

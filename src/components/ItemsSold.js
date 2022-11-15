@@ -19,7 +19,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 function ItemsSold() {
     const salesColumns = [
-        { field: 'id', headerName: 'ID', width: 50 },
+        { field: 'id', headerName: 'ID', width: 50, hide:true },
         { field: 'title', headerName: 'Title', width: 130},
         { field: 'location', headerName: 'Location', width: 90 },
         { field: 'cost', headerName: 'Cost', width: 70 },
@@ -33,13 +33,14 @@ function ItemsSold() {
     ];
 
     const glanceColumns = [
-        { field: 'id', headerName: 'By Category', width: 150},
+        { field: 'id', headerName: 'ID', width: 50, hide:true},
+        { field: 'category', headerName: 'By Category', width: 150},
         { field: 'net', headerName: 'Net', width: 80}
     ];
 
     const glanceRows = [
-        { id: 'Xbox 360', net: '$0.00'},
-        { id: 'Gameboy Color', net: '$0.00'}
+        { id: 0, category: 'Xbox 360', net: '$0.00'},
+        { id: 1, category: 'Gameboy Color', net: '$0.00'}
     ];
 
     return (

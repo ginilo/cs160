@@ -39,7 +39,7 @@ export default function InventorySummary(){
     };
 
     const inventoryColumns = [
-        { field: 'id', headerName: 'ID', width: 50 },
+        { field: 'id', headerName: 'ID', width: 50, hide: true},
         { field: 'name', headerName: 'Name', width: 130},
         { field: 'count', headerName: 'Count', width: 90 },
         { field: 'cost', headerName: 'Cost', width: 70 },
@@ -51,7 +51,7 @@ export default function InventorySummary(){
     ];
 
     const totalColumns = [
-        { field: 'id', headerName: 'ID', width: 50},
+        { field: 'id', headerName: 'ID', width: 50, hide: true},
         { field: 'count', headerName: 'Count', width: 80},
         { field: 'cost', headerName: 'Cost', width: 80},
         { field: 'price', headerName: 'Price', width: 80}

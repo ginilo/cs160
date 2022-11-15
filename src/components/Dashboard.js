@@ -48,7 +48,7 @@ function Dashboard () {
     };
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'id', headerName: 'ID', width: 90, hide: true},
         { field: 'store', headerName: 'Store', width: 150 },
         { field: 'sales', headerName: 'Sales', width: 100 },
         { field: 'cogs', headerName: 'COGS', width: 100 },

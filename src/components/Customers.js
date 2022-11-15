@@ -17,7 +17,7 @@ import { Checkbox } from '@mui/material';
 
 export default function Customers(){
     const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
+        { field: 'id', headerName: 'ID', width: 70, hide: true},
         { field: 'name', headerName: 'Name', width: 170 },
         { field: 'email', headerName: 'Email', width: 170 },
         { field: 'mobile', headerName: 'Mobile', width: 170 },
