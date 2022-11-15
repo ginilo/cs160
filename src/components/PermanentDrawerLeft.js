@@ -37,7 +37,12 @@ export default function PermanentDrawerLeft() {
       setOpen(!open);
     };
   
-    return (
+    const [open2, setOpen2] = React.useState(true);
+    const handleClickTwo = () => {
+        setOpen2(!open2);
+      };
+    
+      return (
     <Box sx={{ display: 'flex'}}>
         <CssBaseline></CssBaseline>
         <Header></Header>
@@ -65,7 +70,7 @@ export default function PermanentDrawerLeft() {
                 </ListItemButton>
                 </ListItem>
 
-            <ListItem key={"Sales"} onClick={() => handleClick} disablePadding>
+            <ListItem key={"Sales"} onClick={() => handleClick()} disablePadding>
                 <ListItemButton component = {Link} to ="/Sales">
                 <ListItemIcon>
                     <PointOfSaleIcon></PointOfSaleIcon>
@@ -101,16 +106,16 @@ export default function PermanentDrawerLeft() {
                 </ListItemButton>
                 </ListItem>
 
-            <ListItem key={"Inventory"} onClick={() => handleClick} disablePadding>
+            <ListItem key={"Inventory"} onClick={() => handleClickTwo()} disablePadding>
                 <ListItemButton component = {Link} to ="/Inventory/Summary">
                 <ListItemIcon>
                     <InventoryIcon></InventoryIcon>
                 </ListItemIcon>
                 <ListItemText primary={"Inventory"} />
-                {open ? <ExpandLess /> : <ExpandMore />}
+                {open2 ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
                 </ListItem>
-            <Collapse in={open} timeout="auto" unmountOnExit>
+            <Collapse in={open2} timeout="auto" unmountOnExit>
                 <List component="inventorylist" disablePadding>
                 <ListItemButton sx={{ pl: 9 }}  component = {Link} to ="/Inventory/Summary">
                     <ListItemText primary="Summary" />

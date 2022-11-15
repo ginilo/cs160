@@ -42,7 +42,6 @@ function CompletedSales() {
             component="main"
             sx={{ flexGrow: 1, bgcolor: 'background.default', display: 'flex', flexDirection: 'column'}}
         >
-        <Toolbar />
         <Box
             component="div"
             sx={{flexGrow: 1, display: 'flex'}}
