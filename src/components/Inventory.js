@@ -18,14 +18,14 @@ import { Link } from 'react-router-dom';
 export default function Inventory(){
     //drop down menu of Summary, Items, History, Transfer
     const [stores, setStores] = React.useState('');
-    const [customers, setCustomers] = React.useState('');
+    const [categories, setCategories] = React.useState('');
 
     const handleStoreChange = (event) => {
         setStores(event.target.value);
     };
 
-    const handleCustomerChange = (event) => {
-        setCustomers(event.target.value);
+    const handleCategoryChange = (event) => {
+        setCategories(event.target.value);
     };
 
     const inventoryColumns = [
@@ -80,8 +80,8 @@ export default function Inventory(){
                                     labelId="demo-simple-select-helper-label"
                                     label="Customer"
                                     id="demo-simple-select"
-                                    value={customers}
-                                    onChange={handleCustomerChange}
+                                    value={categories}
+                                    onChange={handleCategoryChange}
                                 >
                                 <MenuItem value={'Category'}>Category</MenuItem>
                                 <MenuItem value={'Category 2'}>Category 2</MenuItem>
