@@ -65,37 +65,44 @@ function CompletedSales() {
                 <Stack direction="row" spacing={2}>
                 <TextField id="outlined-basic" label="Start Date" variant="outlined" size="small" style={{maxWidth: '130px'}}/>
                 <TextField id="outlined-basic" label="End Date" variant="outlined" size="small" style={{maxWidth: '130px'}}/>
-                <Box sx={{ minWidth: 120 }}>
-                        <FormControl sx={{minWidth: 150 }} size="small">
-                            <InputLabel htmlFor='store-select'>Select Stores</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                label="Select Stores"
-                                id="demo-simple-select"
-                                value={stores}
-                                onChange={handleStoreChange}
-                            >
-                            <MenuItem value={'All Stores'}>All Stores</MenuItem>
-                            <MenuItem value={'Store 2'}>Store 2</MenuItem>
-                            <MenuItem value={'Store 3'}>Store 3</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
-                    <Box sx={{ minWidth: 120, flexGrow: 1 }}>
-                        <FormControl sx={{minWidth: 150 }} size="small">
-                            <InputLabel htmlFor='store-select'>Customer</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                label="Customer"
-                                id="demo-simple-select"
-                                value={customers}
-                                onChange={handleCustomerChange}
-                            >
-                            <MenuItem value={'Customer'}>Customer</MenuItem>
-                            <MenuItem value={'Customer 2'}>Customer 2</MenuItem>
-                            <MenuItem value={'Customer 3'}>Customer 3</MenuItem>
-                            </Select>
-                        </FormControl>
+                <Box
+                    component="div"
+                    sx={{flexGrow:1}}
+                >
+                    <Stack direction="row" spacing={2}>
+                    <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{minWidth: 150 }} size="small">
+                                <InputLabel htmlFor='store-select'>Select Stores</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    label="Select Stores"
+                                    id="demo-simple-select"
+                                    value={stores}
+                                    onChange={handleStoreChange}
+                                >
+                                <MenuItem value={'All Stores'}>All Stores</MenuItem>
+                                <MenuItem value={'Store 2'}>Store 2</MenuItem>
+                                <MenuItem value={'Store 3'}>Store 3</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <Box sx={{ minWidth: 120}}>
+                            <FormControl sx={{minWidth: 150 }} size="small">
+                                <InputLabel htmlFor='store-select'>Customer</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    label="Customer"
+                                    id="demo-simple-select"
+                                    value={customers}
+                                    onChange={handleCustomerChange}
+                                >
+                                <MenuItem value={'Customer'}>Customer</MenuItem>
+                                <MenuItem value={'Customer 2'}>Customer 2</MenuItem>
+                                <MenuItem value={'Customer 3'}>Customer 3</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        </Stack>
                     </Box>
                     <Button variant="contained" size="large" startIcon={<SearchIcon />} style={{maxWidth: '55px', maxHeight: '40px', minWidth: '55px', minHeight: '40px', paddingRight: '10px'}}></Button>
                 </Stack>
