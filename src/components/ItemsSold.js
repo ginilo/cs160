@@ -89,18 +89,21 @@ function ItemsSold() {
                     sx={{flexGrow: 1, bgcolor: 'white', p: 2, minWidth:'700px', maxWidth: '700px'}}
                 >
                     <Box
-                        component="div"
-                        sx={{flexGrow: 1, display: "flex"}}    
+                        component="div"   
                     >
-                    <Box
-                        component="div"
-                        sx={{flexGrow: 1}}    
-                    >
-                        <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Sales</Typography>
-                    </Box>
-                    <Button variant="contained" size="large" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
-                        Export CSV
-                    </Button>
+                        <Stack direction="row" spacing={2}>
+                            <Box
+                                component="div"
+                                sx={{flexGrow: 1}}    
+                            >
+                                <Stack direction="row" spacing={2}>
+                                <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray" sx={{marginLeft: '10px'}}>Sales</Typography>
+                                </Stack>
+                            </Box>
+                            <Button variant="contained" size="large" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
+                                Export CSV
+                            </Button>
+                        </Stack>
                     </Box>
                     <Box
                         sx={{marginTop: '10px'}}
