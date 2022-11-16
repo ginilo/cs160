@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Button, Divider } from '@mui/material';
 import { Stack } from '@mui/system';
@@ -12,7 +11,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 function Sales () {
     const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'id', headerName: 'ID', width: 90, hide: true},
         { field: 'item', headerName: 'Item', width: 300 },
         { field: 'cogs', headerName: 'COGS', width: 100 },
         { field: 'price', headerName: 'Price', width: 100 },
@@ -32,11 +31,10 @@ function Sales () {
 
         <Box
             component="div"
-            sx={{flexGrow: 1, display: 'flex'}}
+            sx={{flexGrow: 1, display: 'flex', paddingTop: '30px'}}
         >
             <Typography variant="h4" color="rgb(90, 90, 90)" paddingLeft="45px" paddingBottom="10px">Sale</Typography>
         </Box>
-        <Typography variant="h4" color="rgb(90, 90, 90)" paddingLeft="45px" paddingBottom="10px">Sale</Typography>
 
         <Divider />
         <Box

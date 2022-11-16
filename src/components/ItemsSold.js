@@ -1,16 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import AddIcon from '@mui/icons-material/Add';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import SearchIcon from '@mui/icons-material/Search';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -19,7 +13,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 function ItemsSold() {
     const salesColumns = [
-        { field: 'id', headerName: 'ID', width: 50 },
+        { field: 'id', headerName: 'ID', width: 50, hide:true },
         { field: 'title', headerName: 'Title', width: 130},
         { field: 'location', headerName: 'Location', width: 90 },
         { field: 'cost', headerName: 'Cost', width: 70 },
@@ -33,13 +27,14 @@ function ItemsSold() {
     ];
 
     const glanceColumns = [
-        { field: 'id', headerName: 'By Category', width: 150},
+        { field: 'id', headerName: 'ID', width: 50, hide:true},
+        { field: 'category', headerName: 'By Category', width: 150},
         { field: 'net', headerName: 'Net', width: 80}
     ];
 
     const glanceRows = [
-        { id: 'Xbox 360', net: '$0.00'},
-        { id: 'Gameboy Color', net: '$0.00'}
+        { id: 0, category: 'Xbox 360', net: '$0.00'},
+        { id: 1, category: 'Gameboy Color', net: '$0.00'}
     ];
 
     return (
@@ -53,7 +48,7 @@ function ItemsSold() {
         >
             <Box
             component="div"
-            sx={{flexGrow: 1, display: 'flex'}}
+            sx={{flexGrow: 1, display: 'flex', paddingTop: '30px'}}
             >
                 <Typography style={{display: 'inline-block'}} variant="h4" color="gray" paddingLeft="45px" paddingBottom="40px">Items Sold</Typography>
             </Box>
@@ -89,18 +84,21 @@ function ItemsSold() {
                     sx={{flexGrow: 1, bgcolor: 'white', p: 2, minWidth:'700px', maxWidth: '700px'}}
                 >
                     <Box
-                        component="div"
-                        sx={{flexGrow: 1, display: "flex"}}    
+                        component="div"   
                     >
-                    <Box
-                        component="div"
-                        sx={{flexGrow: 1}}    
-                    >
-                        <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray">Sales</Typography>
-                    </Box>
-                    <Button variant="contained" size="large" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
-                        Export CSV
-                    </Button>
+                        <Stack direction="row" spacing={2}>
+                            <Box
+                                component="div"
+                                sx={{flexGrow: 1}}    
+                            >
+                                <Stack direction="row" spacing={2}>
+                                <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray" sx={{marginLeft: '10px'}}>Sales</Typography>
+                                </Stack>
+                            </Box>
+                            <Button variant="contained" size="large" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
+                                Export CSV
+                            </Button>
+                        </Stack>
                     </Box>
                     <Box
                         sx={{marginTop: '10px'}}

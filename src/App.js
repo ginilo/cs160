@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import Sales from './components/Sales';
 import Shipping from './components/Shipping';
 import Inventory from './components/Inventory';
+import InventorySummary from './components/InventorySummary'
 import InventoryItems from './components/InventoryItems';
 import InventoryHistory from './components/InventoryHistory';
 import InventoryTransfer from './components/InventoryTransfer';
@@ -58,8 +59,12 @@ const router = createBrowserRouter([
         element: <Shipping />,
       },
       {
-        path: "/Inventory/Summary",
+        path: "/Inventory",
         element: <Inventory />,
+      },
+      {
+        path: "/Inventory/Summary",
+        element: <InventorySummary />,
       },
       {
         path: "/Inventory/Items",
