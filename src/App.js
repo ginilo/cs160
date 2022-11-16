@@ -16,6 +16,9 @@ import StashedSales from './components/StashedSales';
 import CompletedSales from './components/CompletedSales';
 import ItemsSold from './components/ItemsSold';
 import ItemsTraded from './components/ItemsTraded';
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment, incrementByAmount} from './counterSlice'
+import { useGetPokemonByNameQuery } from './services/pokemon'
 
 
 import Admin from './components/Admin';
@@ -87,8 +90,15 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const count = useSelector(state => state.counter.value)
+  const dispatch = useDispatch();
+  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur');
 
-
+  <button aria-label="Increment by specific value"
+          onClick={() => dispatch(incrementByAmount())}
+  >
+    Increment
+  </button>
 
   return ( //returns html 
     <div className="App">
