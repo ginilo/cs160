@@ -20,6 +20,7 @@ import ItemsTraded from './components/ItemsTraded';
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, incrementByAmount} from './counterSlice'
 import { useGetPokemonByNameQuery } from './services/pokemon'
+import Employees from './components/Employees';
 
 
 import Admin from './components/Admin';
@@ -88,6 +89,22 @@ const router = createBrowserRouter([
       },
       {
         path: "/Admin",
+        element: <Admin />,
+      },
+      {
+        path: "/Admin/Subscription",
+        element: <Admin />,
+      },
+      {
+        path: "/Admin/Stores",
+        element: <Admin />,
+      },
+      {
+        path: "/Admin/Employees",
+        element: <Employees />,
+      },
+      {
+        path: "/Admin/Invoices",
         element: <Admin />,
       },
     ]

@@ -42,7 +42,13 @@ export default function PermanentDrawerLeft() {
         setOpen2(!open2);
       };
     
-      return (
+    const [open3, setOpen3] = React.useState(true);
+    const handleClickThree = () => {
+        setOpen3(!open3);
+      };
+
+
+    return (
     <Box sx={{ display: 'flex'}}>
         <CssBaseline></CssBaseline>
         <Header></Header>
@@ -148,14 +154,32 @@ export default function PermanentDrawerLeft() {
                 <ListItemText primary={"Price Changes"} />
                 </ListItemButton>
                 </ListItem>
-             <ListItem key={"Admin"} disablePadding>
+
+             <ListItem key={"Admin"} onClick={() => handleClickThree()} disablePadding>
                 <ListItemButton component = {Link} to ="/Admin">
                 <ListItemIcon>
                     <SupervisedUserCircleIcon></SupervisedUserCircleIcon>
                 </ListItemIcon>
                 <ListItemText primary={"Admin"} />
+                {open3 ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
-                </ListItem>   
+                </ListItem>
+                <Collapse in={open3} timeout="auto" unmountOnExit>
+                <List component="AdminList" disablePadding>
+                <ListItemButton sx={{ pl: 9}}  component = {Link} to ="/Admin/Subscription">
+                    <ListItemText primary="Subscription" />
+                </ListItemButton>
+                <ListItemButton sx={{ pl: 9 }}  component = {Link} to ="/Admin/Stores">
+                    <ListItemText primary="Stores" />
+                </ListItemButton>
+                <ListItemButton sx={{ pl: 9 }}  component = {Link} to ="/Admin/Employees">
+                    <ListItemText primary="Employees" />
+                </ListItemButton>
+                <ListItemButton sx={{ pl: 9 }}  component = {Link} to ="/Admin/Invoices">
+                    <ListItemText primary="Invoices" />
+                </ListItemButton>
+                </List>
+            </Collapse>
            
            </List>
       </Drawer>
