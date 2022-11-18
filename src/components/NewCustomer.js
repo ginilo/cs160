@@ -87,7 +87,11 @@ export default function NewCustomer(){
                             </Box>
                         </Stack>
                     </Stack>
+                        <Box
+                            sx={{display: 'flex', justifyContent: 'right'}}
+                        >
                         <Button variant="contained" size="medium" sx={{textTransform: "none", marginTop: "20px", paddingLeft: "10px", paddingRight: "10px", minWidth: "100px", maxWidth: "100px"}}>Add</Button>
+                        </Box>
                     </Stack>
                 </Box>
             </Box>

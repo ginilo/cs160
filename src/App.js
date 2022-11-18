@@ -23,6 +23,7 @@ import { useGetPokemonByNameQuery } from './services/pokemon'
 import Employees from './components/Employees';
 import Stores from './components/Stores';
 import NewCustomer from './components/NewCustomer';
+import NewEmployee from './components/NewEmployee';
 
 
 import Admin from './components/Admin';
@@ -108,6 +109,10 @@ const router = createBrowserRouter([
       {
         path: "/Admin/Employees",
         element: <Employees />,
+      },
+      {
+        path: "/Admin/Employees/New",
+        element: <NewEmployee />,
       },
       {
         path: "/Admin/Invoices",

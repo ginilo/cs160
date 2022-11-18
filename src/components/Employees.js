@@ -9,6 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { DataGrid } from '@mui/x-data-grid';
 import { FormControlLabel } from '@mui/material';
 import { Checkbox } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function Employees(){
     const columns = [
@@ -37,7 +38,7 @@ export default function Employees(){
             >
                 <Typography style={{display: 'inline-block'}} variant="h4" color="gray" paddingLeft="45px" paddingBottom="40px">Employees</Typography>
             </Box>
-            <Button variant="contained" size="large" startIcon={<AddIcon />} style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', paddingRight: '10px'}} sx={{marginRight: '40px'}}/>
+            <Button variant="contained" size="large" component = {Link} to ="/Admin/Employees/New" startIcon={<AddIcon />} style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', paddingRight: '10px'}} sx={{marginRight: '40px'}}/>
         </Box>
         <Box
             component="div"
