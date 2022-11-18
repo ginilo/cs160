@@ -7,22 +7,17 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import { DataGrid } from '@mui/x-data-grid';
-import { FormControlLabel } from '@mui/material';
-import { Checkbox } from '@mui/material';
-import { Link } from 'react-router-dom';
 
-export default function Customers(){
+export default function Stores(){
     const columns = [
         { field: 'id', headerName: 'ID', width: 70, hide: true},
-        { field: 'name', headerName: 'Name', width: 170 },
-        { field: 'email', headerName: 'Email', width: 170 },
-        { field: 'mobile', headerName: 'Mobile', width: 170 },
-        { field: 'balance', headerName: 'Balance', width: 100 },
-        { field: 'notifications', headerName: 'Notifications', width: 100 },
+        { field: 'name', headerName: 'Name', width: 200 },
+        { field: 'email', headerName: 'Email', width: 300 },
+        { field: 'location', headerName: 'Location', width: 500 },
     ];
     
     const rows = [
-        {id: 1, name: '-', email: '-', mobile: '-', balance: '$0.00', notifications: 0},
+        {id: 1, name: '-', email: '-', location: '-'},
     ];
 
     return (
@@ -38,9 +33,9 @@ export default function Customers(){
             component="div"
             sx={{flexGrow: 1, display: 'flex'}}
             >
-                <Typography style={{display: 'inline-block'}} variant="h4" color="gray" paddingLeft="45px" paddingBottom="40px">Customers</Typography>
+                <Typography style={{display: 'inline-block'}} variant="h4" color="gray" paddingLeft="45px" paddingBottom="40px">Stores</Typography>
             </Box>
-            <Button variant="contained" size="large" component = {Link} to ="/Customers/New" startIcon={<AddIcon />} style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', paddingRight: '10px'}} sx={{marginRight: '40px'}}/>
+            <Button variant="contained" size="large" startIcon={<AddIcon />} style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', paddingRight: '10px'}} sx={{marginRight: '40px'}}/>
         </Box>
         <Box
             component="div"
@@ -58,8 +53,6 @@ export default function Customers(){
                         <Stack direction="row" spacing={2}>
                             <TextField id="outlined-basic" label="Search by keyword" variant="outlined" size="small" style={{maxWidth: '200px'}}/>
                             <Box sx={{color: "gray"}}>
-                                <FormControlLabel control={<Checkbox size="small"/>} label="Has open balance" />
-                                <FormControlLabel control={<Checkbox size="small"/>} label="Has open notifications" />
                             </Box>
                         </Stack>
                     </Box>

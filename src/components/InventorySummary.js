@@ -102,8 +102,7 @@ export default function InventorySummary(){
                                 onChange={handleStoreChange}
                             >
                             <MenuItem value={'All Stores'}>All Stores</MenuItem>
-                            <MenuItem value={'Store 2'}>Store 2</MenuItem>
-                            <MenuItem value={'Store 3'}>Store 3</MenuItem>
+                            <MenuItem value={'Retro Rewind'}>Retro Rewind</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
