@@ -74,7 +74,6 @@ export default function InventoryHistory(){
                                     onChange={handleStoreChange}
                                 >
                                 <MenuItem value={'Retro Rewind'}>Retro Rewind</MenuItem>
-                                <MenuItem value={'-'}>Store 2</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>

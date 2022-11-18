@@ -21,6 +21,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, incrementByAmount} from './counterSlice'
 import { useGetPokemonByNameQuery } from './services/pokemon'
 import Employees from './components/Employees';
+import Stores from './components/Stores';
+import NewCustomer from './components/NewCustomer';
 
 
 import Admin from './components/Admin';
@@ -84,6 +86,10 @@ const router = createBrowserRouter([
         element: <Customers />,
       },
       {
+        path: "/Customers/New",
+        element: <NewCustomer />,
+      },
+      {
         path: "/PriceChanges",
         element: <PriceChanges />,
       },
@@ -97,7 +103,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/Admin/Stores",
-        element: <Admin />,
+        element: <Stores />,
       },
       {
         path: "/Admin/Employees",
