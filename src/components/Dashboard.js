@@ -125,9 +125,9 @@ function Dashboard () {
                                 value={category}
                                 onChange={handleCategoryChange}
                             >
-                            <MenuItem value={'Category1'}>Category1</MenuItem>
-                            <MenuItem value={'Category2'}>Category2</MenuItem>
-                            <MenuItem value={'Category3'}>Category3</MenuItem>
+                            <MenuItem value={'Custom'}>Custom</MenuItem>
+                            <MenuItem value={'Video Games'}>Video Games</MenuItem>
+                            <MenuItem value={'Trading Cards'}>Trading Cards</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
@@ -142,8 +142,7 @@ function Dashboard () {
                                 onChange={handleStoreChange}
                             >
                             <MenuItem value={'All Stores'}>All Stores</MenuItem>
-                            <MenuItem value={'Store 2'}>Store 2</MenuItem>
-                            <MenuItem value={'Store 3'}>Store 3</MenuItem>
+                            <MenuItem value={'Retro Rewind'}>Retro Rewind</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
