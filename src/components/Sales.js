@@ -8,6 +8,10 @@ import { Checkbox } from '@mui/material';
 import Switch from '@mui/material/Switch';
 import AddIcon from '@mui/icons-material/Add';
 import { DataGrid } from '@mui/x-data-grid';
+import AddItemDialog from './AddItemDialog';
+import TradeItemDialog from './TradeItemDialog';
+import ReturnItemDialog from './ReturnItemDialog';
+
 
 function Sales () {
     const columns = [
@@ -22,6 +26,7 @@ function Sales () {
     const rows = [
         {id: 1, item: '-', cogs: '$0.00', price: '$0.00', qty: '0', subtotal: '0'},
     ];
+
 
     return (
         <Box
@@ -42,9 +47,7 @@ function Sales () {
             sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 10}}
         >
             <Stack direction="row" spacing={1}>
-                <Box
-                    sx={{ flexGrow: 0.05}}
-                >
+                <Box sx={{ flexGrow: 0.05}}>
                     <Typography variant="h6" color="gray" paddingLeft="20px" paddingTop="10px">
                         Details
                     </Typography>
@@ -157,16 +160,17 @@ function Sales () {
             sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4}}
         >
             <Box sx={{ flexGrow: 1, bgcolor: 'white', p: 2}}>
-                <Stack direction="row" spacing={1}>
-                    <Button variant="contained" size="auto" sx={{textTransform: "none"}}>Add</Button>
-                    <Button variant="contained" size="auto" sx={{textTransform: "none"}}>Trade</Button>
-                    <Button variant="contained" size="auto" sx={{textTransform: "none"}}>Return</Button>
-                    <Stack direction="row" spacing={1} alignItems="center">
-                        <Typography sx={{marginLeft: "550px"}}>Credit</Typography>
-                        <Switch defaultChecked inputProps={{ 'aria-label': 'ant design' }} />
-                        <Typography>Cash</Typography>
-                    </Stack>
+                <Stack direction="row" spacing={2}> </Stack>
+                        <AddItemDialog> </AddItemDialog>
+                        <TradeItemDialog> </TradeItemDialog>
+                        <ReturnItemDialog> </ReturnItemDialog>
+                <Stack direction="row" spacing={1} alignItems="center">
+                    <Typography sx={{marginLeft: "550px"}}>Credit</Typography>
+                    <Switch defaultChecked inputProps={{ 'aria-label': 'ant design' }} />
+                    <Typography>Cash</Typography>
+                    
                 </Stack>
+                
                 <Box
                     sx={{marginTop: '20px'}}
                 >
