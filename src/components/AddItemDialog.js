@@ -10,33 +10,36 @@ import TextField from '@mui/material/TextField';
 
 function AddItemDialog () {
     
-const [open, setOpen] = React.useState(false);
-const handleClickOpen = () => { setOpen(true); };
-const handleClose = () => { setOpen(false); };
-    <div>
-    <Button variant="contained" size="auto" onClick={handleClickOpen} sx={{textTransform: "none"}}>Add</Button>
-    
-    <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Add an Item</DialogTitle>
-        <DialogContent>
-        <DialogContentText>
-        </DialogContentText>
-        <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-        />
-        </DialogContent>
-        <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleClose}>Done</Button>
-        </DialogActions>
-    </Dialog>
-    </div>
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => { setOpen(true); };
+    const handleClose = () => { setOpen(false); };
+
+    return (
+        <div>
+        <Button variant="contained" size="auto" onClick={handleClickOpen} sx={{textTransform: "none"}}>Add</Button>
+        
+        <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Add an Item</DialogTitle>
+            <DialogContent>
+            <DialogContentText>
+            </DialogContentText>
+            <TextField
+                autoFocus
+                margin="dense"
+                id="name"
+                label="Email Address"
+                type="email"
+                fullWidth
+                variant="standard"
+            />
+            </DialogContent>
+            <DialogActions>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button onClick={handleClose}>Done</Button>
+            </DialogActions>
+        </Dialog>
+        </div>
+    )
 }
 
 export default AddItemDialog;

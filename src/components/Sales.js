@@ -160,15 +160,19 @@ function Sales () {
             sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4}}
         >
             <Box sx={{ flexGrow: 1, bgcolor: 'white', p: 2}}>
-                <Stack direction="row" spacing={2}> </Stack>
-                        <AddItemDialog> </AddItemDialog>
-                        <TradeItemDialog> </TradeItemDialog>
-                        <ReturnItemDialog> </ReturnItemDialog>
-                <Stack direction="row" spacing={1} alignItems="center">
-                    <Typography sx={{marginLeft: "550px"}}>Credit</Typography>
-                    <Switch defaultChecked inputProps={{ 'aria-label': 'ant design' }} />
-                    <Typography>Cash</Typography>
-                    
+                <Stack direction="row">
+                    <Stack direction="row" spacing={2}> 
+                            <AddItemDialog/>
+                            <TradeItemDialog />
+                            <ReturnItemDialog/>
+                    </Stack>
+                            
+                    <Stack direction="row" spacing={1} alignItems="center">
+                        <Typography sx={{marginLeft: "550px"}}>Credit</Typography>
+                        <Switch defaultChecked inputProps={{ 'aria-label': 'ant design' }} />
+                        <Typography>Cash</Typography>
+                        
+                    </Stack>
                 </Stack>
                 
                 <Box
