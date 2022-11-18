@@ -76,14 +76,13 @@ export default function PriceChanges(){
                               onChange={handleStoreChange}
                           >
                           <MenuItem value={'All Stores'}>All Stores</MenuItem>
-                          <MenuItem value={'Store 2'}>Store 2</MenuItem>
-                          <MenuItem value={'Store 3'}>Store 3</MenuItem>
+                          <MenuItem value={'Retro Rewind'}>Retro Rewind</MenuItem>
                           </Select>
                       </FormControl>
                   </Box>
                   <Box sx={{ minWidth: 120 }}>
                       <FormControl sx={{minWidth: 200 }} size="small">
-                          <InputLabel htmlFor='store-select'>Select categories</InputLabel>
+                          <InputLabel htmlFor='category-select'>Select categories</InputLabel>
                           <Select
                               labelId="demo-simple-select-helper-label"
                               label="Customer"
