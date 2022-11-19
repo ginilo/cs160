@@ -153,7 +153,7 @@ function Dashboard () {
         </Box>
         <Box
             component="tools"
-            sx={{bgcolor: 'rgb(243, 243, 243)', paddingLeft: 4, paddingRight: 4, paddingBottom: 4 }}
+            sx={{bgcolor: 'rgb(243, 243, 243)', paddingLeft: 4, paddingRight: 4, paddingBottom: 4, minHeight:'100vh'}}
         >
             <Box
                 sx={{bgcolor: 'white', p: 2, paddingBottom: 2, paddingLeft: 2}}
@@ -179,24 +179,33 @@ function Dashboard () {
                     <Box
                         sx={{bgcolor: 'Background.paper', display: 'flex', minWidth: '900px', maxWidth: '900px', paddingLeft: '10px'}}
                     >
-                        <Typography variant="subtitle1" color= 'gray' gutterBottom sx={{flexGrow: 1}}>
-                            Currently showing results for 
-                        </Typography>
-                        <Box sx={{ minWidth: 100 }}>
-                        <FormControl sx={{ m: 1, minWidth: 160 }} size="small">
-                            <InputLabel htmlFor='overview-select'>Overview</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                label="Overview"
-                                id="demo-simple-select"
-                                value={overview}
-                                onChange={handleOverviewChange}
-                            >
-                            <MenuItem value={1}>Overview</MenuItem>
-                            <MenuItem value={2}>Store 2</MenuItem>
-                            <MenuItem value={3}>Store 3</MenuItem>
-                            </Select>
-                        </FormControl>
+                        <Box
+                            sx={{display: 'flex', flexGrow: 1}}
+                        >
+                        <Box
+                            sx={{flexGrow: 1, display: 'flex', alignItems: 'left', justifyContent: 'left'}}
+                        >
+
+                            <Typography variant="subtitle1" color= 'gray'>
+                                Currently showing results for 
+                            </Typography>
+                        </Box>
+                        <Box >
+                            <FormControl sx={{ m: 1, minWidth: 160 }} size="small">
+                                <InputLabel htmlFor='overview-select'>Overview</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    label="Overview"
+                                    id="demo-simple-select"
+                                    value={overview}
+                                    onChange={handleOverviewChange}
+                                >
+                                <MenuItem value={1}>Overview</MenuItem>
+                                <MenuItem value={2}>Store 2</MenuItem>
+                                <MenuItem value={3}>Store 3</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
                         </Box>
                     </Box>
                     <Box
