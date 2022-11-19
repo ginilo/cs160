@@ -47,7 +47,6 @@ export default function NewCustomer(){
                             <Typography variant="p1" color="gray" textAlign="left">Last name</Typography>
                             <Typography variant="p1" color="gray" textAlign="left">Email</Typography>
                             <Typography variant="p1" color="gray" textAlign="left">Mobile</Typography>
-                            <Typography variant="p1" color="gray" textAlign="left">Driver's Lic. No.</Typography>
                             <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray" textAlign="left">Customer Credit</Typography>
                             <Typography variant="p1" color="gray" textAlign="left">Current Balance</Typography>
                         </Stack>
@@ -61,8 +60,6 @@ export default function NewCustomer(){
                                     <TextField id="outlined-basic" variant="outlined" size="small"/>
                                     <TextField id="outlined-basic" variant="outlined" size="small"/>
                                     <TextField id="outlined-basic" variant="outlined" size="small"/>
-                                    <TextField id="outlined-basic" variant="outlined" size="small"/>
-                                    
                                 </Stack>
                             </Box>
                             <Box
@@ -70,29 +67,6 @@ export default function NewCustomer(){
                                 sx = {{marginTop:'80px', minWidth: '170px', maxWidth: '170px'}}
                             >
                                 <TextField id="outlined-basic" variant="outlined" size="small"/>
-                            </Box>
-                        </Stack>
-                        
-                        <Stack direction = "column" spacing={4} paddingLeft="100px">
-                            <Typography variant="h6" fontWeight="bold" color="gray" textAlign="left">Address</Typography>
-                            <Typography variant="p1" color="gray" textAlign="left">Street 1</Typography>
-                            <Typography variant="p1" color="gray" textAlign="left">Street 2</Typography>
-                            <Typography variant="p1" color="gray" textAlign="left">City</Typography>
-                            <Typography variant="p1" color="gray" textAlign="left">State</Typography>
-                            <Typography variant="p1" color="gray" textAlign="left">ZIP</Typography>
-                        </Stack>
-                        <Stack direction = "column">
-                            <Box
-                                component="div"
-                                sx = {{marginTop: '55px', minWidth: '170px', maxWidth: '170px'}}
-                            >
-                                <Stack direction = "column" spacing={2}>
-                                    <TextField id="outlined-basic" variant="outlined" size="small"/>
-                                    <TextField id="outlined-basic" variant="outlined" size="small"/>
-                                    <TextField id="outlined-basic" variant="outlined" size="small"/>
-                                    <TextField id="outlined-basic" variant="outlined" size="small"/>
-                                    <TextField id="outlined-basic" variant="outlined" size="small"/>
-                                </Stack>
                             </Box>
                         </Stack>
                     </Stack>
