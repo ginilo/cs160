@@ -2,7 +2,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import AddIcon from '@mui/icons-material/Add';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
@@ -40,7 +39,7 @@ export default function Customers(){
             >
                 <Typography style={{display: 'inline-block'}} variant="h4" color="gray" paddingLeft="45px" paddingBottom="40px">Customers</Typography>
             </Box>
-            <Button variant="contained" size="large" component = {Link} to ="/Customers/New" startIcon={<AddIcon />} style={{maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px', paddingRight: '10px'}} sx={{marginRight: '40px'}}/>
+            <Button variant="contained" size="large" component = {Link} to ="/Customers/New" sx={{textTransform: "none", marginRight: '40px', maxHeight: '50px'}}>Add Customer</Button>
         </Box>
         <Box
             component="div"
