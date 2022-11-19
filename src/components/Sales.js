@@ -54,18 +54,23 @@ function Sales () {
                     <Box
                         sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1, paddingLeft: '65px'}}
                     >
+                        
                         <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Purchases
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Returns
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Trades
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Retail Value
                         </Typography>
+                        <Divider />
                     </Box>
                     <Box
                         sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1, paddingLeft: '65px'}}
@@ -73,12 +78,15 @@ function Sales () {
                         <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Discount
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Shipping
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Tax (9.125%)
                         </Typography>
+                        <Divider />
                         <Box sx={{color: "gray"}}>
                         <FormControlLabel control={<Checkbox size="small"/>} label="No Tax" />
                         </Box>
@@ -96,15 +104,19 @@ function Sales () {
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                     </Box>
                     <Box
                         sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1}}
@@ -112,12 +124,15 @@ function Sales () {
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="40px" fontWeight="bold">
                             $0.00
                         </Typography>
@@ -157,7 +172,7 @@ function Sales () {
         </Box>
         <Box
             component="tools"
-            sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4}}
+            sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4, minHeight: '100vh'}}
         >
             <Box sx={{ flexGrow: 1, bgcolor: 'white', p: 2}}>
                 <Stack direction="row">
