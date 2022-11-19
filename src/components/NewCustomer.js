@@ -48,6 +48,8 @@ export default function NewCustomer(){
                             <Typography variant="p1" color="gray" textAlign="left">Email</Typography>
                             <Typography variant="p1" color="gray" textAlign="left">Mobile</Typography>
                             <Typography variant="p1" color="gray" textAlign="left">Driver's Lic. No.</Typography>
+                            <Typography style={{display: 'inline-block'}} variant="h6" fontWeight="bold" color="gray" textAlign="left">Customer Credit</Typography>
+                            <Typography variant="p1" color="gray" textAlign="left">Current Balance</Typography>
                         </Stack>
                         <Stack direction = "column">
                             <Box
@@ -60,7 +62,14 @@ export default function NewCustomer(){
                                     <TextField id="outlined-basic" variant="outlined" size="small"/>
                                     <TextField id="outlined-basic" variant="outlined" size="small"/>
                                     <TextField id="outlined-basic" variant="outlined" size="small"/>
+                                    
                                 </Stack>
+                            </Box>
+                            <Box
+                                component="div"
+                                sx = {{marginTop:'80px', minWidth: '170px', maxWidth: '170px'}}
+                            >
+                                <TextField id="outlined-basic" variant="outlined" size="small"/>
                             </Box>
                         </Stack>
                         
