@@ -16,15 +16,17 @@ import SearchIcon from '@mui/icons-material/Search';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { DataGrid } from '@mui/x-data-grid';
+import moment from 'moment';
 import './components.style.css';
 
 function Dashboard () {
     const [freq, setFreq] = React.useState(1);
     const [category, setCategory, ] = React.useState('');
     const [stores, setStores] = React.useState('');
-    const [value, setValue] = React.useState(null);
+    const [date, setDate] = React.useState(null);
     const [sort, setSort] = React.useState('');
     const [overview, setOverview] = React.useState('');
+    const [searchDate, setSearchDate] = React.useState('Currently showing results for ');
 
     const handleFreqChange = (event) => {
         setFreq(event.target.value);
@@ -36,6 +38,11 @@ function Dashboard () {
 
     const handleStoreChange = (event) => {
         setStores(event.target.value);
+    };
+
+    const handleDateChange = (newDate) => {
+        setDate(newDate)
+        setSearchDate("Currently showing results for " + moment(newDate).format('MM/DD/YYYY'))
     };
 
     const handleOverviewChange = (event) => {
@@ -59,14 +66,6 @@ function Dashboard () {
     const rows = [
         {id: 1, store: 'Retro Rewind', sales: '$0.00', cogs: '$0.00', returns: '$0.00', grossProfit: '$0.00', salesHistory: 'Sales'},
     ];
-
-    const [tableData, setTableData] = React.useState([])
-
-    React.useEffect(() => {
-        fetch("api")
-            .then((data) => data.json())
-            .then((data) => setTableData(data))
-    })
       
     return (
         <Box
@@ -105,10 +104,8 @@ function Dashboard () {
                         <FormControl sx={{minWidth: 120 }} size="small">
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
-                                value={value}
-                                onChange={(newValue) => {
-                                setValue(newValue);
-                                }}
+                                value={date}
+                                onChange={handleDateChange}
                                 renderInput={(params) => <TextField size="small" {...params} />}
                             />
                             </LocalizationProvider>
@@ -187,7 +184,7 @@ function Dashboard () {
                         >
 
                             <Typography variant="subtitle1" color= 'gray'>
-                                Currently showing results for 
+                                {searchDate}
                             </Typography>
                         </Box>
                         <Box >
