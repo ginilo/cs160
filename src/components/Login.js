@@ -9,11 +9,9 @@ import Stack from '@mui/material/Stack';
 
 function Login() {
     return (
-        <Box
-            sx={{bgColor: "rgb(243, 243, 243)"}}
-        >
+        <Box>
             <Box
-                sx={{display: "flex", flexDirection: "column", alignItems: "center", bgcolor: "rgb(300, 300, 300)", minHeight: "100vh"}}
+                sx={{display: "flex", flexDirection: "column", alignItems: "center", bgcolor: "rgb(240, 240, 240)", minHeight: "100vh", paddingTop: 7}}
             >
                 <Typography variant="h4" color="rgb(90, 90, 90)">Retro Rewind POS</Typography>
                 <Box
@@ -23,7 +21,7 @@ function Login() {
                         <Stack direction="column" spacing={2}>
                             <TextField sx={{minWidth: 300, maxWidth: 300}} size="small" label="Email Address" />
                             <TextField sx={{minWidth: 300, maxWidth: 300}} size="small" label="Password" type="password"/>
-                            <Button variant="contained" size="large" sx={{textTransform: "none", marginRight: '40px', maxHeight: '50px'}}>Login</Button>
+                            <Button variant="contained" size="large" sx={{textTransform: "none", marginRight: '40px', maxHeight: '50px', boxShadow: "none"}}>Login</Button>
                             <Typography variant="p1" color="rgb(90, 90, 90)">Forgot Password</Typography>
                         </Stack>
                     </FormControl>
