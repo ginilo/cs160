@@ -52,7 +52,7 @@ export default function Customers(){
                 <Stack direction="row" spacing={2}>
                     <Box
                         component="div"
-                        sx={{flexGrow: 1}}
+                        
                     >
                         <Stack direction="row" spacing={2}>
                             <TextField id="outlined-basic" label="Search by keyword" variant="outlined" size="small" style={{maxWidth: '200px'}}/>
@@ -62,7 +62,7 @@ export default function Customers(){
                             </Box>
                         </Stack>
                     </Box>
-                    <Button variant="contained" size="large" startIcon={<SearchIcon />} style={{maxWidth: '55px', maxHeight: '40px', minWidth: '55px', minHeight: '40px', paddingRight: '10px'}}></Button>
+                    <Button variant="contained" size="large" sx={{textTransform: "none"}}>Search</Button>
                 </Stack>
             </Box>
             <Box
