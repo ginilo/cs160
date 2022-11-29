@@ -24,6 +24,7 @@ import Employees from './components/Employees';
 import Stores from './components/Stores';
 import NewCustomer from './components/NewCustomer';
 import NewEmployee from './components/NewEmployee';
+import Login from './components/Login';
 
 
 import Admin from './components/Admin';
@@ -31,6 +32,10 @@ import {createBrowserRouter, RouterProvider, Route, Link} from "react-router-dom
 
   
 const router = createBrowserRouter([
+  {
+    element: <Login />,
+    path: "/Login"
+  },
   {
     element: <PermanentDrawerLeft /> ,
     children: [

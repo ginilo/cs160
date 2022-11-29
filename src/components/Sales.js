@@ -48,41 +48,49 @@ function Sales () {
         >
             <Stack direction="row" spacing={1}>
                 <Box sx={{ flexGrow: 0.05}}>
-                    <Typography variant="h6" color="gray" paddingLeft="20px" paddingTop="10px">
+                    <Typography variant="h6" color="gray" align="left" paddingLeft='60px' paddingTop="10px">
                         Details
                     </Typography>
                     <Box
-                        sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1}}
+                        sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1, paddingLeft: '65px'}}
                     >
-                        <Typography variant="subtitle2" color="gray" paddingLeft="30px" paddingTop="3px">
+                        
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Purchases
                         </Typography>
-                        <Typography variant="subtitle2" color="gray" paddingLeft="12px" paddingTop="3px">
+                        <Divider />
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Returns
                         </Typography>
-                        <Typography variant="subtitle2" color="gray" paddingLeft="7px" paddingTop="3px">
+                        <Divider />
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Trades
                         </Typography>
-                        <Typography variant="subtitle2" color="gray" paddingLeft="40px" paddingTop="3px">
+                        <Divider />
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Retail Value
                         </Typography>
+                        <Divider />
                     </Box>
                     <Box
-                        sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1}}
+                        sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1, paddingLeft: '65px'}}
                     >
-                        <Typography variant="subtitle2" color="gray" paddingLeft="20px" paddingTop="3px">
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Discount
                         </Typography>
-                        <Typography variant="subtitle2" color="gray" paddingLeft="20px" paddingTop="3px">
+                        <Divider />
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Shipping
                         </Typography>
-                        <Typography variant="subtitle2" color="gray" paddingLeft="49px" paddingTop="3px">
+                        <Divider />
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px">
                             Tax (9.125%)
                         </Typography>
-                        <Box sx={{paddingLeft: "60px", color: "gray"}}>
+                        <Divider />
+                        <Box sx={{color: "gray"}}>
                         <FormControlLabel control={<Checkbox size="small"/>} label="No Tax" />
                         </Box>
-                        <Typography variant="subtitle2" color="gray" paddingLeft="1px" paddingTop="3px" paddingBottom="25px" fontWeight="bold">
+                        <Typography variant="subtitle2" color="gray" align="left" paddingTop="3px" paddingBottom="25px" fontWeight="bold">
                             Total
                         </Typography>
                     </Box>
@@ -96,15 +104,19 @@ function Sales () {
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                     </Box>
                     <Box
                         sx={{ flexGrow: 1, bgcolor: 'white', paddingTop: 1}}
@@ -112,12 +124,15 @@ function Sales () {
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="3px">
                             $0.00
                         </Typography>
+                        <Divider />
                         <Typography variant="subtitle2" color="gray" paddingLeft="45px" paddingTop="40px" fontWeight="bold">
                             $0.00
                         </Typography>
@@ -126,7 +141,7 @@ function Sales () {
                 <Box
                     sx={{ flexGrow: 0.3}}
                 >
-                    <Typography style={{display: 'inline-block'}}variant="h6" color="gray" paddingTop="10px" paddingRight="10px">
+                    <Typography style={{display: 'inline-block'}}variant="h6" color="gray" align="left" paddingTop="10px" paddingRight="10px">
                         Customer
                     </Typography>
                     <Button variant="contained" size="small" startIcon={<AddIcon />} style={{maxWidth: '25px', maxHeight: '25px', minWidth: '25px', minHeight: '25px', paddingRight: '1px'}}/>
@@ -157,7 +172,7 @@ function Sales () {
         </Box>
         <Box
             component="tools"
-            sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4}}
+            sx={{ flexGrow: 1, bgcolor: 'rgb(243, 243, 243)', p: 4, minHeight: '100vh'}}
         >
             <Box sx={{ flexGrow: 1, bgcolor: 'white', p: 2}}>
                 <Stack direction="row">
