@@ -85,7 +85,7 @@ function Dashboard () {
             <Box
                 sx={{flexGrow: 1, bgcolor: 'white', p: 8, paddingBottom: 2, paddingLeft: 3}}
             >
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={1}>
                     <Box sx={{ minWidth: 120 }}>
                         <FormControl sx={{minWidth: 120 }} size="small">
                             <Select
@@ -143,8 +143,7 @@ function Dashboard () {
                             </Select>
                         </FormControl>
                     </Box>
-                    <Button variant="contained" size="large" startIcon={<SearchIcon />} style={{maxWidth: '55px', maxHeight: '40px', minWidth: '55px', minHeight: '40px', paddingRight: '10px'}}>
-                    </Button>
+                    <Button variant="contained" size="large" style={{textTransform: "none"}}>Apply Filters</Button>
                 </Stack>
             </Box>
         </Box>
@@ -168,56 +167,73 @@ function Dashboard () {
                             aria-label="Vertical tabs example"
                             sx={{ borderRight: 1, borderColor: 'divider' }}
                         >
-                            <Tab label="By Store" />
                             <Tab label="By Category" />
                         </Tabs>
                     </Box>
-                    <Stack direction="column" spacing={1}>
                     <Box
-                        sx={{bgcolor: 'Background.paper', display: 'flex', minWidth: '900px', maxWidth: '900px', paddingLeft: '10px'}}
+                        sx={{display: "flex", justifyContent: "space-between", flexDirection: "column"}}
                     >
-                        <Box
-                            sx={{display: 'flex', flexGrow: 1}}
-                        >
-                        <Box
-                            sx={{flexGrow: 1, display: 'flex', alignItems: 'left', justifyContent: 'left'}}
-                        >
-
-                            <Typography variant="subtitle1" color= 'gray'>
-                                {searchDate}
-                            </Typography>
-                        </Box>
-                        <Box >
-                            <FormControl sx={{ m: 1, minWidth: 160 }} size="small">
-                                <InputLabel htmlFor='overview-select'>Overview</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-helper-label"
-                                    label="Overview"
-                                    id="demo-simple-select"
-                                    value={overview}
-                                    onChange={handleOverviewChange}
+                        <Stack direction="column" spacing={1}>
+                            <Box
+                                sx={{bgcolor: 'Background.paper', display: 'flex', minWidth: '900px', maxWidth: '900px', paddingLeft: '10px'}}
+                            >
+                                <Box
+                                    sx={{display: 'flex', flexGrow: 1}}
                                 >
-                                <MenuItem value={1}>Overview</MenuItem>
-                                <MenuItem value={2}>Store 2</MenuItem>
-                                <MenuItem value={3}>Store 3</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Box>
-                        </Box>
+                                <Box
+                                    sx={{flexGrow: 1, display: 'flex', alignItems: 'left', justifyContent: 'left'}}
+                                >
+
+                                    <Typography variant="subtitle1" color= 'gray'>
+                                        {searchDate}
+                                    </Typography>
+                                </Box>
+                                <Box >
+                                    <FormControl sx={{ m: 1, minWidth: 160 }} size="small">
+                                        <InputLabel htmlFor='overview-select'>Overview</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-helper-label"
+                                            label="Overview"
+                                            id="demo-simple-select"
+                                            value={overview}
+                                            onChange={handleOverviewChange}
+                                        >
+                                        <MenuItem value={1}>Overview</MenuItem>
+                                        <MenuItem value={2}>Store 2</MenuItem>
+                                        <MenuItem value={3}>Store 3</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Box>
+                                </Box>
+                            </Box>
+                            <Typography variant="h6" fontWeight="bold" color="gray">Total Sales</Typography>
+                            <Box
+                                sx={{paddingLeft: '10px'}}
+                            >
+                                <DataGrid
+                                    rows={rows}
+                                    columns={columns}
+                                    pageSize={5}
+                                    rowsPerPageOptions={[5]}
+                                    checkboxSelection
+                                    autoHeight
+                                />
+                            </Box>
+                        </Stack>
+                        <Stack direction="column" spacing={1}>
+                            <Stack direction="row" spacing={2}>
+                                <Typography variant="p1" fontWeight="bold" color="gray">Total</Typography>
+                                <Typography variant="p1" fontWeight="bold" color="gray">Video Games</Typography>
+                                <Typography variant="p1" fontWeight="bold" color="gray">Trading Cards</Typography>
+                                <Typography variant="p1" fontWeight="bold" color="gray">Miscellaneous</Typography>
+                            </Stack>
+                            <Stack direction="row" spacing={4}>
+                                <Typography variant="p1" color="gray" sx={{marginLeft: "140px"}}>$0.00</Typography>
+                                <Typography variant="p1" color="gray" >$0.00</Typography>
+                                <Typography variant="p1" color="gray">$0.00</Typography>
+                            </Stack>
+                        </Stack>
                     </Box>
-                    <Box
-                        sx={{paddingLeft: '10px'}}
-                    >
-                        <DataGrid
-                            rows={rows}
-                            columns={columns}
-                            pageSize={5}
-                            rowsPerPageOptions={[5]}
-                            checkboxSelection
-                            autoHeight
-                        />
-                    </Box>
-                    </Stack>
                 </Stack>
             </Box>
         </Box>
