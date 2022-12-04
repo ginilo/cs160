@@ -16,10 +16,12 @@ import StashedSales from './components/StashedSales';
 import CompletedSales from './components/CompletedSales';
 import ItemsSold from './components/ItemsSold';
 import ItemsTraded from './components/ItemsTraded';
+import UserComp from './components/UserComp';
 
 
 import Admin from './components/Admin';
 import {createBrowserRouter, RouterProvider, Route, Link} from "react-router-dom";
+import NewCustomer from './components/NewCustomer';
 
   
 const router = createBrowserRouter([
@@ -72,7 +74,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/Customers",
-        element: <Customers />,
+        element: <NewCustomer />,
+        // element: <Customers />,
       },
       {
         path: "/PriceChanges",
@@ -94,7 +97,7 @@ function App() {
     <div className="App">
       <CssBaseline />
       <RouterProvider router={router} />
-
+          {/*<UserComp /> */}
     </div>
   );
 }
