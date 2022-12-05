@@ -8,17 +8,17 @@ class Customers extends Component {
       super(props)
     
       this.state = {
-         users: {},
+         users: [],
          errorMsg: ' '
       }
     }
     
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('/users')
 
         .then(response => {
             console.log(response)
-            this.setState({users: response.data})
+            this.setState({users: response.data.items})
         })
         .catch(error => {
             console.log(error)
@@ -32,10 +32,10 @@ class Customers extends Component {
     return (
       <div>
         List of users
-        <Fetching/>
+        {/* <Fetching/> */}
         {
             users.length ?
-            users.map(users => <div key={users.id}>{/*users.username}{users.email*/}</div>) :
+            users.map(users => <div key={users.userId}>{users.firstName}{users.lastName}{users.email}</div>) :
             null
         }
         { errorMsg ? <div>{errorMsg}</div> : null}

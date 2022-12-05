@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-export class NewCustomer extends Component {
 
+export class NewUser extends Component {
+  
 constructor(props) {
   super(props)
 
@@ -71,4 +72,4 @@ submitHandler = (e) => {
   }
 }
 
-export default NewCustomer
+export default NewUser
