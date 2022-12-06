@@ -73,7 +73,7 @@ export default function Inventory(){
                     <Stack direction="row" spacing={2}>
                         <TextField id="outlined-basic" label="Search by keyword" variant="outlined" size="small"/>
                         <Box sx={{ minWidth: 120 }}>
-                            <FormControl sx={{minWidth: 230 }} size="small">
+                            <FormControl sx={{minWidth: 200 }} size="small">
                                 <InputLabel htmlFor='category-select'>Select categories</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-helper-label"
@@ -89,7 +89,7 @@ export default function Inventory(){
                             </FormControl>
                         </Box>
                         <Box sx={{ minWidth: 120 }}>
-                            <FormControl sx={{minWidth: 230 }} size="small">
+                            <FormControl sx={{minWidth: 180 }} size="small">
                                 <InputLabel htmlFor='store-select'>All Stores</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-helper-label"
@@ -106,6 +106,9 @@ export default function Inventory(){
                         <Button variant="contained" size="large" startIcon={<SearchIcon />} style={{maxWidth: '55px', maxHeight: '40px', minWidth: '55px', minHeight: '40px', paddingRight: '10px'}}></Button>
                     </Stack>
                 </Box>
+                    <Button variant="contained" size="medium" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
+                        Import CSV
+                    </Button>
                     <Button variant="contained" size="medium" startIcon={<ArrowForwardIcon />} sx={{textTransform: "none"}}>
                         Export CSV
                     </Button>
